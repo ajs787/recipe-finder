@@ -1,0 +1,157 @@
+/* src/RecipeFinder.css */
+.recipe-finder {
+    font-family: 'Roboto', sans-serif;
+    position: relative; 
+    padding-top: 60px; 
+}
+  
+h1 {
+    position: absolute;
+    top: 20px; 
+    left: 30px; 
+    font-size: 1.6em;
+    color: #343a40;
+    margin: 0; 
+    font-weight: normal;
+    letter-spacing: -1.5px; 
+}
+
+h1 strong {
+    font-weight: bold; 
+}
+
+.search-form-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+input, button {
+    padding: 17px;
+    font-size: 16px;
+    color:#afafaf;
+    border-radius: 15px;
+    width: 50%; 
+    margin-top: 60px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+}
+
+input {
+    color: #3e3e3e;
+    letter-spacing: +0.5px;
+}
+
+button {
+    font-weight: bold;
+    background-color: #38ae65;
+    color: white;
+    cursor: pointer;
+    border: 2px solid #0000; 
+    width: 13%; 
+}
+
+/* subheading styles */
+.subheading-container {
+    margin: 200px 0 20px; 
+}
+
+.subheading-container h2 {
+    font-size: 3.1em;
+    color: #3b3b3b;
+    margin: 30px;
+}
+
+.subsub {
+    margin: 0px 0 0px;
+}
+
+.subsub h3 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #7f7f7f; 
+    position: absolute; 
+    top: 315px; 
+    left: 30px; 
+    letter-spacing: -0.3px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+.smallest {
+    margin: 0px 0 0px;
+}
+
+.smallest h4 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #7f7f7f; 
+    position: absolute; 
+    top: 335px; 
+    left: 30px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* shadow */
+    letter-spacing: -0.3px; 
+}
+
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: -30px;
+}
+
+.recipe {
+    border-radius: 10px;
+    border: 4px solid #c3c3c3;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    margin: 17px;
+    padding: 15px;
+    max-width: 200px;
+    text-align: left;
+}
+
+.recipe img {
+    align-content: center;
+    max-width: 100%;
+    border-radius: 0px;
+
+}
+
+.recipe h2 {
+    font-size: 1.25em;
+    margin: 10px 0; 
+}
+
+.recipe p {
+    font-size: 0.9em;
+    color: #666; 
+    margin: 5px 0; 
+}
+
+.recipe a {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    border: 2px solid #d2e6fc;
+    background-color: #eff5fe;
+    
+    color: #007bff;
+    
+    text-decoration: none;
+    padding: 5px;
+    text-align: center; 
+}
+
+.recipe a:hover {
+    text-decoration: underline;
+    background-color: #f0f0f0; 
+}
+
+.recipe .calories {
+    font-size: 0.85em;
+    color: #888; 
+    margin-top: 5px; 
+}
