@@ -53,6 +53,114 @@ button {
     width: 13%; 
 }
 
+.filters {
+    position: relative;
+    display: inline-block;
+    margin-top: -30px; /* Adjust to move the filters down */
+  }
+  
+  .filters button {
+    background-color: #86a9ea;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 110px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    list-style: none;
+    padding: 5px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .filters .dropdown-menu {
+    position: relative;
+    top: -20px; 
+    left: 20px;
+  }
+
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+.selected-preferences {
+  display: inline-block;
+  position: absolute;
+  top: 470px;  
+  margin-left: 30px;
+  z-index: 2;
+}
+  
+  .preference-badge {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 0.9em;
+  }
+
+  .filters2 {
+    position: absolute;
+    top: 443px;
+    left: 125px;
+  }
+
+.filters2 button {
+    background-color: #ffd700;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 110px;
+}
+
+.filters2 .dropdown-menu {
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    list-style: none;
+    padding: 5px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #38ae65;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .load-more-button:hover {
+    background-color: #2e8b57;
+  }
+  
+
 /* subheading styles */
 .subheading-container {
     margin: 200px 0 20px; 
@@ -98,46 +206,51 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: -30px;
 }
 
 .recipe {
-    border-radius: 10px;
-    border: 4px solid #c3c3c3;
+    border: none;
     background-color: #f8f8f8;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     margin: 17px;
     padding: 15px;
-    max-width: 200px;
-    text-align: left;
+    max-width: 250px;
+    text-align: center;
 }
 
 .recipe img {
-    align-content: center;
     max-width: 100%;
-    border-radius: 0px;
-
+    border-radius: 10px;
 }
 
 .recipe h2 {
-    font-size: 1.25em;
-    margin: 10px 0; 
+    font-size: 1.6em;
+    margin: 10px 0;
+}
+
+.recipe a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recipe a:hover {
+    text-decoration: underline;
 }
 
 .recipe p {
     font-size: 0.9em;
-    color: #666; 
-    margin: 5px 0; 
+    color: #666;
+    margin: 5px 0;
 }
+
 
 .recipe a {
     display: block;
     margin-top: 15px;
     font-weight: bold;
-    border: 2px solid #d2e6fc;
-    background-color: #eff5fe;
-    
     color: #007bff;
     
     text-decoration: none;
