@@ -23,8 +23,9 @@ const RecipeFinder = () => {
   const [totalResults, setTotalResults] = useState(0);
   const [loading, setLoading] = useState(false);
 
-  const APP_ID = '87f42800';
-  const APP_KEY = '2693ae6655e325e1615238cdcca445c0';
+
+  const APP_ID = '9645ecc1';
+  const APP_KEY = '709a09f8a4766f04fcd6c4a5d8c27386';
 
   const togglePreference = (preference) => {
     setSelectedPreferences(prev => {
@@ -39,25 +40,28 @@ const RecipeFinder = () => {
   const searchRecipes = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+    
+    setRecipes([]);  
+    setPage(1);    //clear previous pages and set to 1  
+  
     const formattedQuery = query.split(',').map(ingredient => ingredient.trim()).join(',+');
     const healthParams = selectedPreferences.length > 0 ? `&health=${selectedPreferences.join('&health=')}` : '';
-    const ratingParams = selectedRating ? `&minRating=${selectedRating}` : '';
-    const url = `https://api.edamam.com/search?q=${formattedQuery}&app_id=${APP_ID}&app_key=${APP_KEY}${healthParams}${ratingParams}&from=${(page - 1) * 40}&to=${page * 40}`;
-
-    console.log('Fetching from URL:', url); // Debug URL
+  
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${formattedQuery}&app_id=${APP_ID}&app_key=${APP_KEY}${healthParams}&from=${(page - 1) * 40}&to=${page * 40}`;
+  
+    console.log('Fetching from URL:', url);
     try {
       const result = await axios.get(url);
-      console.log('API Response:', result.data); // Debug response
-      setTotalResults(result.data.count);
-      setRecipes(prevRecipes => [...prevRecipes, ...result.data.hits]);
+      console.log('API Response:', result.data);
+      setTotalResults(result.data.count || 0);
+      setRecipes(prevRecipes => [...prevRecipes, ...result.data.hits]);  
     } catch (error) {
       console.error("Error fetching recipes:", error);
     } finally {
       setLoading(false);
     }
   };
-
+  
   const loadMoreRecipes = () => {
     setPage(prevPage => prevPage + 1);
     searchRecipes(new Event('click')); 
@@ -149,9 +153,9 @@ const RecipeFinder = () => {
                 {recipe.recipe.label}
               </a>
               <div className="rating">
-                {renderStars(Math.round(recipe.recipe.rating))}
-                <span className="rating-count">({recipe.recipe.ratingCount} ratings)</span>
+                <span>Calories: {Math.round(recipe.recipe.calories)}</span>
               </div>
+
             </div>
           </div>
         ))}
@@ -165,5 +169,6 @@ const RecipeFinder = () => {
     </div>
   );
 };
+
 
 export default RecipeFinder;
