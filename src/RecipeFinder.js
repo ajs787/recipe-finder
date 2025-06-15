@@ -3,11 +3,11 @@ import axios from 'axios';
 import './RecipeFinder.css';
 
 const dietaryPreferences = [
+  { label: 'Vegetarian', value: 'vegetarian' },
+  { label: 'Vegan', value: 'vegan' },
   { label: 'Keto', value: 'keto' },
   { label: 'Gluten-Free', value: 'gluten-free' },
-  { label: 'Vegetarian', value: 'vegetarian' },
-  { label: 'Halal', value: 'halal' },
-  { label: 'Vegan', value: 'vegan' },
+  { label: 'Halal', value: 'halal' }, 
 ];
 
 const starRatings = [1, 2, 3, 4, 5];
